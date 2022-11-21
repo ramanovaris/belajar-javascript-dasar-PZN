@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      const name = "Rama Novaris Ayyubi Pratama";
+      const firstName = "Rama Novaris";
+      const lastName = "Ayyubi Pratama";
+      const lama = "Name : " + firstName + " " + lastName;
+      const template = `Name : ${firstName} ${lastName}`;
+
+      console.info("cara lama : \n" + lama);
+      console.info(`cara baru : \n ${template}`);
+
+      const multiline = `Saya Rama seorang programmer handal 
+tiada tanding
+no 1 didunia
+dongg
+      `;
+
+      document.writeln("<pre>");
+      document.writeln(multiline);
+      document.writeln("</pre>");
+    </script>
+  </body>
+</html>
