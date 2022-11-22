@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe Data Array</title>
+  </head>
+  <body>
+    <script>
+      let arrayKosong = []; // array kosong
+      let arrayNames = [`Jumai`, `Faris`, `Nurul`]; // array dengan isi
+
+      const names = [];
+      // Add Data kedalam array
+      names.push(`Rama`);
+      names.push(`Novaris`, `Ayyubi`);
+
+      console.table(names);
+
+      // cek data dengan index array
+      console.info(names[1]);
+      console.info(names[2]);
+
+      // rubah data array dengan index array
+      names[1] = `jumai`;
+      console.table(names);
+
+      // delete index array
+      delete names[2];
+      console.table(names);
+
+      // tambah data lagi
+      names.push(`eko`, `rasid`);
+      names[4] = `egit`;
+      console.table(names);
+
+      // tambah data dengan number
+      names.push(1, 2, 3);
+      console.table(names);
+
+      // tambah array dalam array (jadi array dua dimensi)
+      names.push([`muhammad`, `faris`]);
+      console.table(names);
+    </script>
+  </body>
+</html>
