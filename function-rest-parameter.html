@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Rest Parameter</title>
+  </head>
+  <body>
+    <script>
+      function sum(name, ...data) {
+        let total = 0;
+        for (const qty of data) {
+          total += qty;
+        }
+
+        document.writeln(`<p>Total ${name} is ${total}</p>`);
+      }
+
+      sum("Rambutan", 10, 5, 15);
+
+      const values = [20, 40, 40];
+      sum("Durian", ...values);
+    </script>
+  </body>
+</html>
