@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Method</title>
+  </head>
+  <body>
+    <script>
+      function sayReligion(value) {
+        document.writeln(`<p>Agama ${value}</p>`);
+      }
+
+      const person = {
+        name: "Rama",
+        // object method dengan anonymous function
+        sayHello: function (nama) {
+          document.writeln(`<p>Hello ${nama}</p>`);
+        },
+        // object method dengan function biasa
+        religion: sayReligion,
+      };
+
+      person.sayHello("Faris");
+      person.sayHello(person.name);
+
+      person.religion("Islam");
+
+      // menambah method ke object yg sdh ada
+      person.sayWife = function (nama) {
+        document.writeln(`<p>Nama Istri saya : ${nama}</p>`);
+      };
+
+      person.sayWife("Jumai");
+    </script>
+  </body>
+</html>
