@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Arrow</title>
+  </head>
+  <body>
+    <script>
+      ///////////////////////////////////////////////////////////////
+      // Membuat Arrow Function
+      const sayHello = (name) => {
+        const say = `Hello ${name}`;
+        console.info(say);
+      };
+
+      sayHello("rama");
+
+      ///////////////////////////////////////////////////////////////
+      // membuat arrow function tanpa block scope
+      const sayHelloNoBlock = (name) => console.info(`Hei ${name}`);
+
+      sayHelloNoBlock("jumai");
+
+      ///////////////////////////////////////////////////////////////
+      // membuat arrow function return value
+      // const sum = (fist, second) => {
+      //   return fist + second;
+      // };
+      const sum = (fist, second) => fist + second;
+
+      console.info(sum(100, 100));
+
+      ///////////////////////////////////////////////////////////////
+      // arrow function tanpa tanda kurung parameter klo cuma satu parameter
+      const hei = (name) => console.info(`Hei ${name}`);
+
+      hei("Faris");
+
+      ///////////////////////////////////////////////////////////////
+      // Arrow Function sebagai parameter (mirip kaya anonymous function)
+      function giveMeName(callback) {
+        callback("Nazwa");
+      }
+
+      // Anonymous function
+      giveMeName(function (name) {
+        console.info(`Helo ${name}`);
+      });
+
+      // Arrow Function
+      giveMeName((name) => console.info(`Uy ${name}`));
+    </script>
+  </body>
+</html>
