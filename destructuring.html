@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      {
+        // Array
+        const names = ["Rama", "Novaris", "Ayyubi", "Jumai", "Faris"];
+
+        // get array biasa
+        // const firstName = names[0];
+        // const middleName = names[1];
+        // const lastName = names[2];
+
+        // get array dengan destructuring array
+        const [firstName, middleName, lastName, ...others] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        console.info(others);
+      }
+
+      {
+        // Object
+        const person = {
+          firstName: "Rama",
+          lastName: "Pratama",
+          address: {
+            street: "Jalan Belum Ada",
+            city: "Pelaihari",
+            country: "Indonesia",
+          },
+          hoby: "main game",
+          instagram: "@ramanovaris",
+        };
+
+        // get object dengan destructuring object
+        // const { lastName, firstName, address, ...others } = person;
+
+        // get object dengan destructuring nested object
+        const {
+          lastName,
+          firstName,
+          address: { city, street, country },
+          ...others
+        } = person;
+
+        console.info(firstName);
+        console.info(lastName);
+        // console.info(address); // error karna pakai destructuring nested object
+        console.info(city);
+        console.info(street);
+        console.info(country);
+        console.info(others);
+      }
+
+      {
+        // Destructuring di function parameter Object
+
+        // get object ke dalam function dengan biasa
+        // function displayPerson(person) {
+        //   console.info(person.firstName);
+        //   console.info(person.lastName);
+        // }
+
+        // get object ke dalam function dengan destructuring
+        function displayPerson({ lastName, firstName }) {
+          console.info(firstName);
+          console.info(lastName);
+        }
+
+        const person = {
+          firstName: "Muhammad",
+          lastName: "Alfaris",
+        };
+
+        displayPerson(person);
+      }
+
+      {
+        // Destructuring di function parameter Array
+
+        // get array ke dalam function dengan biasa
+        // function sum(array) {
+        //   return array[0] - array[1];
+        // }
+
+        // get array ke dalam function dengan destructuring
+        function sum([firstNumber, lastNumber]) {
+          return firstNumber - lastNumber;
+        }
+
+        console.info(sum([1, 2]));
+        console.info(sum([15, 10]));
+      }
+
+      {
+        // Default Value Destructuring Array
+
+        const names = ["Rama", "Jumai"];
+        const [firstName, middleName = "Novaris", lastName = "Ayyubi"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+
+      {
+        // Default Value Destructuring Object
+        const person = {
+          firstName: "Rama",
+          middleName: "Jumai",
+          lastName: "Pratama",
+        };
+        const { lastName, firstName, middleName = "Novaris" } = person;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+      {
+        // Destructuring Object menggunakan nama variable lain
+        const person = {
+          firstName: "Rama",
+          middleName: "Jumai",
+          lastName: "Pratama",
+        };
+
+        const { lastName: namaBelakang, firstName: namaDepan, middleName: namaTengah = "Novaris" } = person;
+
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+    </script>
+  </body>
+</html>
